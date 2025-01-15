@@ -1,4 +1,4 @@
-docker compose backup
+portainer compose backup
 
 10 - adguardhome  
 13 - filebrowser  
