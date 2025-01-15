@@ -1,0 +1,20 @@
+version: "3.5"
+
+services:
+  diun:
+    image: crazymax/diun:latest
+    container_name: diun
+    command: serve
+    volumes:
+      - "/docker/data/diun:/data"
+      - "/docker/config/diun/diun.yml:/diun.yml:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    environment:
+      - "TZ=America/Toronto"
+      - "LOG_LEVEL=info"
+      - "LOG_JSON=false"
+      - "DIUN_PROVIDERS_DOCKER=true"
+    restart: always
+    labels:
+      - "diun.enable=true"
+
