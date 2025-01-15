@@ -1,1 +1,27 @@
 docker compose backup
+
+10 - adguardhome
+13 - filebrowser
+27 - scrutiny
+28 - uptime-kuma
+42 - nginx-proxy-manager
+43 - homepage
+44 - jackett
+45 - changedetection
+46 - diun
+54 - healthchecks
+55 - jellyfin
+56 - jdownloader-2
+57 - radarr
+58 - sonarr
+61 - cloudflared
+64 - ytdl_material
+65 - umami
+66 - jellyseerr
+74 - assetgrid
+77 - syncthing
+79 - dozzle
+81 - jellystat
+82 - jfa-go
+83 - fail2ban
+84 - ddns-updater
