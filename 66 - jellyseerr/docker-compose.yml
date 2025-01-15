@@ -1,0 +1,15 @@
+version: '3'
+services:
+    jellyseerr:
+       image: fallenbagel/jellyseerr:latest
+       container_name: jellyseerr
+       environment:
+            - LOG_LEVEL=debug
+            - TZ=America/Toronto
+       ports:
+            - 5055:5055
+       volumes:
+            - /docker/config/jellyseer:/app/config
+       restart: unless-stopped
+       labels:
+            - "diun.enable=true"
