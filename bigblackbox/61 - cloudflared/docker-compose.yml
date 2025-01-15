@@ -1,8 +1,0 @@
-services:
-  cloudflared:
-    image: cloudflare/cloudflared:latest
-    container_name: cloudflared
-    restart: unless-stopped
-    command: tunnel run --token eyJhIjoiOWQ2MmRkNGMxOGMzZDMwNDY3Y2FhZTA3NTBiMWE5ZDAiLCJ0IjoiMTA3MzAyZWQtZGU5Zi00M2JlLThkNDAtNzZjMTI5MzI5ZTY1IiwicyI6IlltRXlOelZrTWpRdE1tUXhZUzAwWTJZMExXRXhaamd0T0Rsa1pEYzRNamcwTTJJMCJ9
-    labels:
-      - "diun.enable=true"
