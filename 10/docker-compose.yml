@@ -1,20 +1,15 @@
----
-version: '3.3'
 services:
-    adguardhome:
-        container_name: adguardhome
-        restart: unless-stopped
-        volumes:
-            - '/docker/data/adguardhome:/opt/adguardhome/work'
-            - '/docker/config/adguardhome:/opt/adguardhome/conf'
-        ports:
-            - '53:53/tcp'
-            - '53:53/udp'
-            - '67:67/udp'
-            - '69:69/tcp'
-            - '69:69/udp'
-            - '853:853/tcp'
-            - '3000:3000/tcp'
-        image: adguard/adguardhome
-        labels:
-            - "diun.enable=true"
+  adguard:
+    image: adguard/adguardhome
+    container_name: AdGuard
+    mem_limit: 2g
+    cpu_shares: 768
+    security_opt:
+      - no-new-privileges:true
+    restart: on-failure:5
+    network_mode: host
+    volumes:
+      - /docker/config/adguardhome:/opt/adguardhome/conf:rw
+      - /docker/data/adguardhome:/opt/adguardhome/work:rw
+    environment:
+      TZ: America/Toronto
