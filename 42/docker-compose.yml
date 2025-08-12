@@ -1,5 +1,5 @@
 services:
-  app:
+  npm:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
@@ -18,6 +18,15 @@ services:
 
       # Uncomment this if IPv6 is not enabled on your host
       # DISABLE_IPV6: 'true'
+
+    tinyauth:
+      container_name: tinyauth
+      image: ghcr.io/steveiliop56/tinyauth:v3
+      restart: unless-stopped
+      environment:
+        - SECRET_FILE=/secret.txt
+        - APP_URL=http://tinyauth.example.com
+        - USERS=user:xG?(T+^VHKZ+[MJE}5[Kik/* # user:password
 
     volumes:
       - ./data:/data
